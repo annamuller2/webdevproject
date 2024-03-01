@@ -1,11 +1,14 @@
-import {
-  html,
-  render
-} from "https://unpkg.com/htm/preact/standalone.module.js";
+import React from "react";
+import ReactDOM from "react-dom";
 import Main from "./Components/Main/Main.js";
 
+/*
+Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
+Parse.serverURL = Env.SERVER_URL;
+*/
+
 function App() {
-  return html`<${Main} />`;
+  return <Main />;
 }
 
-render(html` <${App} /> `, document.getElementById("app"));
+export default App;
