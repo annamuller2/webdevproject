@@ -1,0 +1,86 @@
+[
+    {
+      "title": "Mamma Heger's Chocolate Chip Cookies",
+      "link": "",
+      "ingredients": [
+        {
+          "name": "brown sugar",
+          "amount": "3/4",
+          "unit": "cup",
+          "detail": "packed"
+        },
+        { "name": "white sugar", "amount": "1/4", "unit": "cup", "detail": "" },
+        {
+          "name": "butter",
+          "amount": "2",
+          "unit": "sticks",
+          "detail": "softened"
+        },
+        {
+          "name": "instant french vanilla pudding",
+          "amount": "1",
+          "unit": "packet",
+          "detail": ""
+        },
+        { "name": "eggs", "amount": "2", "unit": "", "detail": "" },
+        { "name": "vanilla", "amount": "1", "unit": "tsp", "detail": "" },
+        { "name": "flour", "amount": "2 1/4", "unit": "cups", "detail": "" },
+        { "name": "baking soda", "amount": "1", "unit": "tsp", "detail": "" },
+        { "name": "chocolate chips", "amount": "1", "unit": "bag", "detail": "" }
+      ],
+      "directions": [
+        "Preheat the oven to 350 degrees F.",
+        "Mix the butter, brown sugar, and white sugar.",
+        "Add the french vanilla pudding packet. Mix.",
+        "Add the eggs and the vanilla. Mix.",
+        "Add the flour and baking soda. Mix.",
+        "Add the chocolate chips. Mix.",
+        "Scoop the dough into balls and place on a baking sheet. Bake for 9-11 minutes."
+      ],
+      "imageName": "cookies.jpg"
+    },
+    {
+      "title": "Homemade Hot Chocolate",
+      "link": "",
+      "ingredients": [
+        {
+          "name": "milk",
+          "amount": "4",
+          "unit": "cups",
+          "detail": ""
+        },
+        {
+          "name": "cocoa powder",
+          "amount": "1/4",
+          "unit": "cup",
+          "detail": "unsweetened"
+        },
+        {
+          "name": "granulated sugar",
+          "amount": "1/4",
+          "unit": "cup",
+          "detail": ""
+        },
+        {
+          "name": "bittersweet chocolate chips",
+          "amount": "1/2",
+          "unit": "cup",
+          "detail": ""
+        },
+        {
+          "name": "pure vanilla extract",
+          "amount": "1/4",
+          "unit": "tsp",
+          "detail": ""
+        }
+      ],
+      "directions": [
+        "Place milk, cocoa powder, and sugar in s amsll saucepan",
+        "Heat over medium/medium-low heat, whisking frequently, until warm",
+        "Add chocolate chipts and whisk constantly until the chocolate chips melt and distribute evenly into the milk",
+        "Whisk in vanilla extract",
+        "Serve immediately"
+      ],
+      "imageName": "hotchocolate.webp"
+    }
+  ]

@@ -1,19 +1,19 @@
 
-import React, {useEffect, useSate } from "react";
-//import { getAllRecipes } from "../../Services/Recipes.js";
-//import RecipeList from "./RecipeList.js";
+import React, { useEffect, useState } from "react";
+import { getAllRecipes } from "../../Services/Recipes.js";
+import RecipeList from "./RecipeList.js";
 //import RecipeForm from "./RecipeForm.js";
   
   const Main = () => {
-    //const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState([]);
   
-    /*
+    
     useEffect(() => {
       getAllRecipes().then((recipes) => {
         setRecipes(recipes);
       });
     }, []);
-    */
+    
   
     function clickAlert() {
       alert("Submission received!");
@@ -24,6 +24,7 @@ import React, {useEffect, useSate } from "react";
         <div>
           <h1>Digital Cookbook</h1>
           Welcome to your personalized digital cookbook!
+          <RecipeList recipes={recipes} />
         </div>
       );
     };
