@@ -1,17 +1,28 @@
 
 import React, { useEffect, useState } from "react";
-import { getAllRecipes } from "../../Services/Recipes.js";
+import { getAllRecipes, Recipes } from "../../Services/Common/Recipes.js";
 import RecipeList from "./RecipeList.js";
 //import RecipeForm from "./RecipeForm.js";
   
   const Main = () => {
     const [recipes, setRecipes] = useState([]);
   
-    
+    /*
     useEffect(() => {
       getAllRecipes().then((recipes) => {
         setRecipes(recipes);
       });
+    }, []);
+    */
+    useEffect(() => {
+      if (Recipes.collection.length) {
+        setRecipes(Recipes.collection);
+      } else {
+        getAllRecipes().then((recipes) => {
+          console.log(recipes);
+          setRecipes(recipes);
+        });
+      }
     }, []);
     
   
