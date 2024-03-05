@@ -1,14 +1,24 @@
 //this is the image component, which loads the image file named in the JSON
-import FoodImages from "../../Images/cookies.jpg";
+import HotChocolate from "../../Images/hotchocolate.webp";
+import Cookies from "../../Images/cookies.jpg"
 
 const RecipeImage = ({ imageLink }) => {
-
-  const imagePath = `../../Images/${imageLink}`;
-  return (
-    <div>
-      <img src={imagePath} alt={imagePath} />
-    </div>
-  );
+  try {
+    const imagePath = require(`../../Images/${imageLink}`).default;
+    console.log("imagePath:", imagePath);
+    return (
+      <div>
+        <img key={imageLink} src={imagePath} alt={imageLink} />
+      </div>
+    );
+  } catch (error) {
+    console.error("Error loading image:", error);
+    return (
+      <div>
+        <p>Error loading image: {error.message}</p>
+      </div>
+    );
+  }
 };
 
 export default RecipeImage;
