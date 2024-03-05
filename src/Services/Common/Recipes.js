@@ -1,7 +1,7 @@
 import Parse from "parse";
 /* SERVICE FOR PARSE SERVER OPERATIONS */
 
-// CREATE operation - new lesson with Title
+// CREATE operation - new recipe with Title
 export const createRecipe = (Title) => {
   console.log("Creating: ", Title);
   const Recipe = Parse.Object.extend("Recipe");
@@ -9,17 +9,17 @@ export const createRecipe = (Title) => {
   // using setter to UPDATE the object
   recipe.set("title", Title);
   return recipe.save().then((result) => {
-    // returns new Lesson object
+    // returns new Recipe object
     return result;
   });
 };
 
-// READ operation - get lesson by ID
+// READ operation - get recipe by ID
 export const getById = (id) => {
   const Recipe = Parse.Object.extend("Recipe");
   const query = new Parse.Query(Recipe);
   return query.get(id).then((result) => {
-    // return Lesson object with objectId: id
+    // return Recipe object with objectId: id
     return result;
   });
 };
@@ -33,7 +33,7 @@ export const getAllRecipes = () => {
   const query = new Parse.Query(Recipe);
   return query.find().then((results) => {
     console.log("results: ", results);
-    // returns array of Lesson objects
+    // returns array of Recipe objects
     return results;
   });
 };
