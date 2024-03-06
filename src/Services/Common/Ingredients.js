@@ -46,3 +46,17 @@ export const removeIngredient = (id) => {
     ingredient.destroy();
   });
 };
+
+
+export const getAllIngredientsByRecipe = (recipeId) => {
+    const Ingredient = Parse.Object.extend("Ingredient");
+    const query = new Parse.Query(Ingredient);
+
+    query.equalTo("recipe", recipeId);
+
+    return query.find().then((results) => {
+      console.log("results: ", results);
+      // returns array of Ingredient objects
+      return results;
+    });
+  };
