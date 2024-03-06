@@ -5,7 +5,7 @@ const RecipeForm = ({ recipes, onSubmitClick }) => {
   return(
     <div>
       <hr />
-      <h2>Search for a Recipe</h2>
+      <h2>Add a Recipe</h2>
       <form action="#">
         <p>
           {/* Recipe title text input */}
