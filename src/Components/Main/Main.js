@@ -20,19 +20,22 @@ import RecipeList from "./RecipeList.js";
       }
     }, []);
     
-    const [ingredients, setIngredients] = useState([]);
+    //  No reason to get all ingredients
+    //  Need to be queried by recipeID later
+    
+    // const [ingredients, setIngredients] = useState([]);
   
   
-    useEffect(() => {
-      if (Ingredients.collection.length) {
-        setIngredients(Ingredients.collection);
-      } else {
-        getAllIngredients().then((ingredients) => {
-          console.log(ingredients);
-          setIngredients(ingredients);
-        });
-      }
-    }, []);
+    // useEffect(() => {
+    //   if (Ingredients.collection.length) {
+    //     setIngredients(Ingredients.collection);
+    //   } else {
+    //     getAllIngredients().then((ingredients) => {
+    //       console.log(ingredients);
+    //       setIngredients(ingredients);
+    //     });
+    //   }
+    // }, []);
     
 
     function clickAlert() {
@@ -44,7 +47,7 @@ import RecipeList from "./RecipeList.js";
         <div>
           <h1>Digital Cookbook</h1>
           Welcome to your personalized digital cookbook!
-          <RecipeList recipes={recipes} ingredients={ingredients}/>
+          <RecipeList recipes={recipes} />
         </div>
       );
     };

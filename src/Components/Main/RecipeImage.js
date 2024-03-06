@@ -4,6 +4,7 @@ import Cookies from "../../Images/cookies.jpg"
 
 const RecipeImage = ({ imageLink }) => {
   try {
+    // image path does not work 
     const imagePath = require(`../../Images/${imageLink}`).default;
     console.log("imagePath:", imagePath);
     return (
