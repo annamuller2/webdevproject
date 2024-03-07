@@ -52,7 +52,12 @@ export const getAllIngredientsByRecipe = (recipeId) => {
     const Ingredient = Parse.Object.extend("Ingredient");
     const query = new Parse.Query(Ingredient);
 
-    query.equalTo("recipe", recipeId);
+    console.log("RECIPE_ID",recipeId['recipeId'].toString())
+
+    const recipePointer = new Parse.Object("Recipe");
+    recipePointer.id = recipeId['recipeId'].toString();
+
+    query.equalTo("recipe", recipePointer);
 
     return query.find().then((results) => {
       console.log("results: ", results);

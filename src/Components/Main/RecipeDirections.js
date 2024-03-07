@@ -4,6 +4,7 @@ import React from "react";
 const RecipeDirections = ({ recipe }) => {
   return (
     <div>
+      Directions:
       <ol>
         {recipe && recipe.map(
           (direction) => (<li key={direction}>{direction}</li>
