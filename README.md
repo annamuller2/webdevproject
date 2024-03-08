@@ -1,3 +1,6 @@
+# Project Authors
+Anna Muller and Anna Heger
+
 # Getting Started with Create React App
 testing
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,25 +1,26 @@
-//this is the image component, which loads the image file named in the JSON
-import HotChocolate from "../../Images/hotchocolate.webp";
-import Cookies from "../../Images/cookies.jpg"
+//this is the image component, which loads the image from the database
+//this feature is not fully built out yet, we will add this in feature5
 
 const RecipeImage = ({ imageLink }) => {
-  try {
-    // image path does not work 
-    const imagePath = require(`../../Images/${imageLink}`).default;
-    console.log("imagePath:", imagePath);
+  
+    // Check if the imageLink is a File object
+    if (imageLink instanceof File) {
+      // Create a URL for the File object
+      const imageUrl = URL.createObjectURL(imageLink);
+  
+      return (
+        <div>
+          <img src={imageUrl} alt="Recipe" />
+        </div>
+      );
+    }
+  
+    // Handle the case when imageLink is not a File
     return (
       <div>
-        <img key={imageLink} src={imagePath} alt={imageLink} />
+        Invalid imageLink type.
       </div>
     );
-  } catch (error) {
-    console.error("Error loading image:", error);
-    return (
-      <div>
-        <p>Error loading image: {error.message}</p>
-      </div>
-    );
-  }
-};
+  };
 
 export default RecipeImage;

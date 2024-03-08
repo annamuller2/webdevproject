@@ -19,24 +19,6 @@ import RecipeList from "./RecipeList.js";
         });
       }
     }, []);
-    
-    //  No reason to get all ingredients
-    //  Need to be queried by recipeID later
-    
-    // const [ingredients, setIngredients] = useState([]);
-  
-  
-    // useEffect(() => {
-    //   if (Ingredients.collection.length) {
-    //     setIngredients(Ingredients.collection);
-    //   } else {
-    //     getAllIngredients().then((ingredients) => {
-    //       console.log(ingredients);
-    //       setIngredients(ingredients);
-    //     });
-    //   }
-    // }, []);
-    
 
     function clickAlert() {
       alert("Submission received!");
@@ -51,11 +33,6 @@ import RecipeList from "./RecipeList.js";
         </div>
       );
     };
-
-    /*
-    <RecipeList recipes={recipes} />
-    <RecipeForm recipes={recipes} onSubmitClick={clickAlert} />
-    */
 
   export default Main;
   
