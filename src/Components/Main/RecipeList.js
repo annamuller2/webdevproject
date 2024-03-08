@@ -1,4 +1,4 @@
-import RecipeImage from "./RecipeImage.js"
+// import RecipeImage from "./RecipeImage.js"
 import RecipeDirections from "./RecipeDirections.js"
 import RecipeIntermediate from "./RecipeIntermediate.js"
 
@@ -16,7 +16,8 @@ const RecipeList = ({ recipes }) => {
 
               {recipe.get("title")}
               {/* call the child components */}
-              <RecipeImage imageLink={recipe.get("imageName")} />
+              {/* we will uncomment the RecipeImage component in feature5 */}
+              {/* <RecipeImage imageLink={recipe.get("image")} /> */}
               <RecipeIntermediate recipeId={recipe.id}  />
               <RecipeDirections recipe={recipe.get("directions")} /> 
 

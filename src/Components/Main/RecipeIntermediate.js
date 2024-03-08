@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getAllIngredientsByRecipe, Ingredients } from "../../Services/Common/Ingredients.js";
 import RecipeIngredients from "./RecipeIngredients.js";
 
+//This is where the recipe id is passed into the function getAllIngredientsByRecipe
+//Then the ingredients that are returned are passed into RecipeIngredients
 const Intermediate = ( recipeId ) => {
   
     const [ingredients, setIngredients] = useState([]);
