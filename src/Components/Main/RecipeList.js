@@ -1,6 +1,6 @@
 import RecipeImage from "./RecipeImage.js"
 import RecipeDirections from "./RecipeDirections.js"
-import RecipeIngredients from "./RecipeIngredients.js"
+import RecipeIntermediate from "./RecipeIntermediate.js"
 
 //Recipe list component, which is a prent component to RecipeImage, RecipeIngrediennts, and RecipeDirections
 const RecipeList = ({ recipes }) => {
@@ -13,24 +13,11 @@ const RecipeList = ({ recipes }) => {
             <li key={recipe}>
 
               {/* print the title, image, ingredients, and directions for each recipe */}
+
               {recipe.get("title")}
-
-              {/* const [ingredients, setIngredients] = useState([]);
-  
-              useEffect(() => {
-              if (Ingredients.collection.length) {
-                setIngredients(Ingredients.collection);
-              } else {
-                getAllIngredients().then((ingredients) => {
-                console.log(ingredients);
-                setIngredients(ingredients);
-                });
-              }
-              }, []); */}
-
               {/* call the child components */}
               <RecipeImage imageLink={recipe.get("imageName")} />
-              <RecipeIngredients recipeId={recipe.get("objectId")}  />
+              <RecipeIntermediate recipeId={recipe.id}  />
               <RecipeDirections recipe={recipe.get("directions")} /> 
 
             </li>
