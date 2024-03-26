@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+//This is the code for the routing footer
 const Footer = () => (
   <footer>
     <nav>

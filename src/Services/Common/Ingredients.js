@@ -14,7 +14,7 @@ export const createIngredient = (Name) => {
   });
 };
 
-// READ operation - get lesson by ID
+// READ operation - get ingredients by ID
 export const getById = (id) => {
   const Ingredient = Parse.Object.extend("Ingredient");
   const query = new Parse.Query(Ingredient);
@@ -47,13 +47,12 @@ export const removeIngredient = (id) => {
   });
 };
 
-
+//This is how the ingredients for each recipe are found
 export const getAllIngredientsByRecipe = (recipeId) => {
     const Ingredient = Parse.Object.extend("Ingredient");
     const query = new Parse.Query(Ingredient);
 
-    console.log("RECIPE_ID",recipeId['recipeId'].toString())
-
+    //The input to the query needs to be collected as an object and converted to a string
     const recipePointer = new Parse.Object("Recipe");
     recipePointer.id = recipeId['recipeId'].toString();
 

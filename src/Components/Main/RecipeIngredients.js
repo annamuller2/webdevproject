@@ -1,5 +1,6 @@
 import React from "react";
 
+//This is the recipe ingredients mapping
 const RecipeIngredients = ({ ingredients }) => {
   return (
     <div>
