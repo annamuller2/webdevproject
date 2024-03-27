@@ -40,6 +40,11 @@ export const loginUser = (currUser) => {
     });
 };
 
+// used in auth logout component
+export const logoutUser = () => {
+    return Parse.User.logOut()
+};
+  
 export const checkUser = () => {
   return Parse.User.current()?.authenticated;
 };
