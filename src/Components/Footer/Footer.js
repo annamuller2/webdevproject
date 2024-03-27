@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Main from "../Main/Main.js";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 
 //This is the code for the routing footer
 const Footer = () => (
@@ -6,7 +8,7 @@ const Footer = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/">Recipes</Link>
+          <Link to="/" element={<ProtectedRoute path="/" element={Main} />}>Recipes</Link>
         </li>
         <li>
           <Link to="/form">Form</Link>
