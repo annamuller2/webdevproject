@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getAllRecipes, Recipes } from "../../Services/Common/Recipes.js";
 import { getAllIngredients, Ingredients } from "../../Services/Common/Ingredients.js";
 import RecipeList from "./RecipeList.js";
+import AuthLogout from "../Auth/AuthLogout.js"
 //import RecipeForm from "./RecipeForm.js";
   
   const Main = () => {
@@ -30,6 +31,7 @@ import RecipeList from "./RecipeList.js";
           <h1>Digital Cookbook</h1>
           Welcome to your personalized digital cookbook!
           <RecipeList recipes={recipes} />
+          <AuthLogout/>
         </div>
       );
     };
