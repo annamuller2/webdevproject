@@ -2,6 +2,18 @@ Change Log
 
 All notable changes to this project will be kept in this file. 
 
+[0.3.0] - 2024-03-28
+
+Added
+- Added log in, register, and logout feature
+- Added auth service
+- Added protected routes
+
+Changed
+- Changed parse database to add names and email features to built in User class
+
+Fixed
+
 [0.2.0] - 2024-03-08
 
 Added

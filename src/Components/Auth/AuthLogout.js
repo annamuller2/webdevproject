@@ -2,6 +2,7 @@ import React from "react";
 import { logoutUser } from "./AuthService";
 import { useNavigate } from "react-router-dom";
 
+//this is the logout button
 const AuthLogout = () => {
   const navigate = useNavigate();
 
