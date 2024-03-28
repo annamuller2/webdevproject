@@ -25,7 +25,7 @@ import AuthLogout from "../Auth/AuthLogout.js"
       alert("Submission received!");
     }
   
-    //This is the html for the page, which contains a header, and the list of recipes in the JSON, and a form for user input
+    //This is the html for the page, which contains a header, and the list of recipes in the JSON, and logout button
     return (
         <div>
           <h1>Digital Cookbook</h1>

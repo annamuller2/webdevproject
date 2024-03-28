@@ -1,5 +1,7 @@
 import Parse from "parse";
 
+//these are the functions that interact with Parse to perform authentication actions
+
 // used in auth register component
 export const createUser = (newUser) => {
   const user = new Parse.User();
