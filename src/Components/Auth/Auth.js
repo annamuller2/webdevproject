@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { checkUser } from "./AuthService";
 
+//this is the authentication page
 const AuthModule = () => {
   const navigate = useNavigate();
 
@@ -14,6 +15,7 @@ const AuthModule = () => {
     }
   }, [navigate]);
 
+//login and register buttons
   return (
     <div>
       <Link to="/auth/register">

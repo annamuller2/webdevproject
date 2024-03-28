@@ -7,7 +7,7 @@ import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.js";
 
-//This is where the main components are, so far we have main and a user input formthat doesn't connect to anything
+//These are the routing components, including protected routes, auth, and the main recipes page and form page
 export default function Components() {
   return (
     <Router>
