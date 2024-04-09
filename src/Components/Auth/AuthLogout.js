@@ -12,7 +12,7 @@ const AuthLogout = () => {
     navigate("/auth"); 
   };
 
-  return <button onClick={logoutHandler}>Logout</button>;
+  return <button onClick={logoutHandler} className="border-blue-700 border rounded-md py-2 px-3 text-blue-700 hover:bg-blue-700 hover:text-white">Logout</button>;
 };
 
 export default AuthLogout;
