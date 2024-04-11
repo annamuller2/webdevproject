@@ -18,7 +18,9 @@ const RecipeList = ({ recipes }) => {
               {recipe.get("title")}
               {/* call the child components */}
               {/* we will uncomment the RecipeImage component in feature5 */}
-              <RecipeImage imageLink={recipe.get("image")} />
+              <RecipeImage imageUrl={recipe.get("image").url()} />
+              {console.log("TESTING")}
+              {console.log(recipe.get("image").url())}
               <RecipeIntermediate recipeId={recipe.id}  />
               <RecipeDirections recipe={recipe.get("directions")} /> 
 
