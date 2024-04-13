@@ -1,4 +1,5 @@
 import React from "react";
+import ImageForm from "./ImageForm";
 
 //This is the user input component with an event binding on the submit button
 const RecipeForm = ({ recipes, onSubmitClick }) => {
@@ -20,6 +21,7 @@ const RecipeForm = ({ recipes, onSubmitClick }) => {
           <p><input type="radio" name="type" value="appetizer" />Appetizer</p>
           <p><input type="radio" name="type" value="dessert" />Dessert</p>
         </div>
+        <ImageForm/>
         {/* Submit button */}
         <input
           type="submit"
