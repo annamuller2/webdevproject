@@ -2,46 +2,22 @@ import React from "react";
 import ImageForm from "./ImageForm";
 
 //This is the user input component with an event binding on the submit button
-const RecipeForm = ({ recipes, onSubmitClick }) => {
+const RecipeForm = ({ ingredientRows, 
+  directionRows, 
+  onIngredientChange, 
+  onDirectionChange,
+  onAddIngredientRow,
+  onAddDirectionRow,
+  onSubmitClick 
+ }) => {
   return(
     <div>
       <hr />
       <h2>Add a Recipe</h2>
-      <form action="#">
-        <p>
-          {/* Recipe title text input */}
-          Recipe Name:
-          <input type="text" name="recipeName" />
-        </p>
-        {/* Radio Buttons */}
-        <p>Please select the recipe type:</p>
-        <div>
-          <p><input type="radio" name="type" value="mainDish" />Main Dish</p>
-          <p><input type="radio" name="type" value="sideDish" />Side Dish</p>
-          <p><input type="radio" name="type" value="appetizer" />Appetizer</p>
-          <p><input type="radio" name="type" value="dessert" />Dessert</p>
-        </div>
-        <ImageForm/>
-        {/* Submit button */}
-        <input
-          type="submit"
-          name="submit"
-          value="Submit"
-          onClick={onSubmitClick}
-        />
-      </form>
-    </div>
-  );
-};
-
-export default RecipeForm;
-
-
-{/* <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <form action="#" onSubmit={onSubmit}>
       <div>
       <p>
+          {/* Recipe title text input */}
           <label> Recipe Name: </label>
           <input type="text" name="recipeName" />
         </p>
@@ -64,7 +40,7 @@ export default RecipeForm;
               name="amount"
               placeholder="2"
               value={row.amount}
-              onChange={(e) => handleIngredientInputChange(e, index)}
+              onIngredientChange={(e) => onIngredientChange(e, index)}
             />
             <label>Unit: </label>
             <input
@@ -72,7 +48,7 @@ export default RecipeForm;
               name="unit"
               placeholder="cups"
               value={row.unit}
-              onChange={(e) => handleIngredientInputChange(e, index)}
+              onIngredientChange={(e) => onIngredientChange(e, index)}
             />
             <label>Name: </label>
             <input
@@ -80,7 +56,7 @@ export default RecipeForm;
               name="name"
               placeholder="brown sugar"
               value={row.name}
-              onChange={(e) => handleIngredientInputChange(e, index)}
+              onIngredientChange={(e) => onIngredientChange(e, index)}
             />
             <label>Description: </label>
             <input
@@ -88,11 +64,11 @@ export default RecipeForm;
               name="detail"
               placeholder="packed"
               value={row.detail}
-              onChange={(e) => handleIngredientInputChange(e, index)}
+              onIngredientChange={(e) => onIngredientChange(e, index)}
             />
           </div>
         ))}
-        <button onClick={handleAddIngredientRow}>Add Row</button>
+        <button onClick={onAddIngredientRow}>Add Row</button>
         <br/> <br/>
 
 
@@ -105,12 +81,20 @@ export default RecipeForm;
               name="direction"
               placeholder="Combine ingredients in large mixing bowl."
               value={row.direction}
-              onChange={(e) => handleDirectionInputChange(e, index)}
+              onDirectionChange={(e) => onDirectionChange(e, index)}
             />
           </div>
         ))}
-        <button onClick={handleAddDirectionRow}>Add Row</button>
+        <button onClick={onAddDirectionRow}>Add Row</button>
         <br/> <br/>
-        <button onClick={handleSubmit}>Submit</button>
+        <ImageForm/>
+        <button type="submit" onClick={onSubmitClick}>Submit</button>
       </div>
-    </div> */}
+      </form>
+    </div>
+  );
+};
+
+export default RecipeForm;
+
+
