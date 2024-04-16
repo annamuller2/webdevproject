@@ -9,7 +9,7 @@ export const createImage = (Title) => {
 
     const parseFile = new Parse.File(name, file);
 
-    
+
     }
 };
 
