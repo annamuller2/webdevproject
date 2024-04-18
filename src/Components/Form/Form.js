@@ -1,4 +1,5 @@
 import RecipeForm from "./RecipeForm.js";
+import RecipeHandler from "./RecipeHandler";
 
 const Form = () => {
 
@@ -11,7 +12,7 @@ const Form = () => {
         <div>
           <h1>Digital Cookbook</h1>
           Add to your personalized digital cookbook here!
-          <RecipeForm onSubmitClick={clickAlert}/>
+          <RecipeHandler onSubmitClick={clickAlert}/>
         </div>
       );
     };
