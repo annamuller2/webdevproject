@@ -1,16 +1,23 @@
 import Parse from "parse";
-import { createRecipe } from "../../Services/Common/Recpes.js";
-
-export const createImage = (Title) => {
-    const fileUploadControl = $("#profilePhotoFileUpload")[0];
-    if (fileUploadControl.files.length > 0) {
-    const file = fileUploadControl.files[0];
-    const name = "photo.jpg";
-
-    const parseFile = new Parse.File(name, file);
+//import { createRecipe } from "../../Services/Common/Recipes.js";
 
 
-    }
+// export const createImage = (Title) => {
+//     const fileUploadControl = $("#profilePhotoFileUpload")[0];
+//     if (fileUploadControl.files.length > 0) {
+//     const file = fileUploadControl.files[0];
+//     const name = "photo.jpg";
+
+//     const parseFile = new Parse.File(name, file);
+
+
+//     }
+// };
+
+export const createDirectionsArray = (Directions) => {
+   console.log(Directions);
+   const directionStrings = Directions.map(item => item.direction);
+   return directionStrings;
 };
 
 export const createUser = (newUser) => {

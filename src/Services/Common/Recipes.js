@@ -2,15 +2,18 @@ import Parse from "parse";
 /* SERVICE FOR PARSE SERVER OPERATIONS */
 
 //CREATE operation - new recipe with Title
-export const createRecipe = (Title, File) => {
+export const createRecipe = (Title, Directions) => {
   console.log("Creating: ", Title);
   const Recipe = Parse.Object.extend("Recipe");
   const recipe = new Recipe();
   // using setter to UPDATE the object
   recipe.set("title", Title);
   
+  //this is the line that sets the directions
+  recipe.set("directions",Directions)
+
   //this is the line that sets the image (we can change)
-  recipe.set("image",File);
+  //recipe.set("image",File);
 
   return recipe.save().then((result) => {
     // returns new Recipe object

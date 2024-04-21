@@ -83,7 +83,7 @@
   //import ingredientRows from "./RecipeHandler";
   import * as React from 'react';
   
-  const RecipeForm = ({ ingredientRows, handleIngredientInputChange, handleAddIngredientRow, directionRows, handleDirectionInputChange, handleAddDirectionRow, handleSubmit }) => {
+  const RecipeForm = ({ basicRecipeInfo, onChangeHandler, ingredientRows, handleIngredientInputChange, handleAddIngredientRow, directionRows, handleDirectionInputChange, handleAddDirectionRow, handleSubmit }) => {
 
   return (
     <div>
@@ -93,10 +93,11 @@
       <p>
           {/* Recipe title text input */}
           <label> Recipe Name: </label>
-          <input type="text" name="recipeName" />
+          <input type="text" name="recipeName" value = {basicRecipeInfo.title} onChange={(e) => onChangeHandler(e)}/>
         </p>
       <p>Select the recipe type:</p>
-      <select name="type" id="type">
+      <select name="type" id="type" value = {basicRecipeInfo.type} onChange={(e) => onChangeHandler(e)}
+>
         <option value="appetizer">Appetizer</option>
         <option value="mainDish">Main Dish</option>
         <option value="sideDish">Side Dish</option>
