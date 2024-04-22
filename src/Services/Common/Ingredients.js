@@ -27,14 +27,6 @@ Ingredients.forEach(row => {
   });
 });
 
-  // const Ingredient = Parse.Object.extend("Ingredient");
-  // const ingredient = new Ingredient();
-  // // using setter to UPDATE the object
-  // ingredient.set("name", Name);
-  // return ingredient.save().then((result) => {
-  //   // returns new Ingredients object
-  //   return result;
-  // });
 };
 
 // READ operation - get ingredients by ID

@@ -1,14 +1,25 @@
 import * as React from 'react';
 import RecipeForm from './RecipeForm';
 import { createDirectionsArray } from './RecipeService';
+import { createParseFile } from './RecipeService';
 import { createRecipe } from "../../Services/Common/Recipes.js";
 import { createIngredient } from "../../Services/Common/Ingredients.js";
 
 const RecipeHandler = () => {
 
+  //state for the ingredient rows
 const [ingredientRows, setIngredientRows] = React.useState([{ amount: '', unit: '', name: '', detail: '' }]);
+
+//state for the recipe title and type
 const [basicRecipeInfo, setBasicRecipeInfo] = React.useState([]);
 
+//state for the image file
+const [imageFile, setImageFile] = React.useState(null); 
+
+//state for the direction rows
+const [directionRows, setDirectionRows] = React.useState([{ direction: '' }]);
+
+//handler for ingredients
   const handleIngredientInputChange = (e, index) => {
     const values = [...ingredientRows];
     if (e.target.name === 'name') {
@@ -27,10 +38,7 @@ const [basicRecipeInfo, setBasicRecipeInfo] = React.useState([]);
     setIngredientRows([...ingredientRows, { amount: '', unit: '', name: '', detail: '' }]);
   };
 
-  // Handle direction rows 
-
-  const [directionRows, setDirectionRows] = React.useState([{ direction: '' }]);
-
+  // Handle direction rows
   const handleDirectionInputChange = (e, index) => {
     const directions = [...directionRows];
       directions[index].direction = e.target.value;
@@ -53,23 +61,29 @@ const [basicRecipeInfo, setBasicRecipeInfo] = React.useState([]);
     });
   };
 
+  // Handle image
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImageFile(file);
+  };
+
   // Handle submit 
   const handleSubmit = () => {
     console.log("submit success");
-    const directions = createDirectionsArray(directionRows);
 
-    createRecipe("temporary", directions)
+    //call the directions and image formatters
+    const directions = createDirectionsArray(directionRows);
+    const image = createParseFile(imageFile);
+
+    //create the recipe
+    createRecipe(basicRecipeInfo['recipeName'], basicRecipeInfo['type'], directions, image)
     .then(recipe => {
         // Print the ID of the created recipe
         console.log("Recipe created with ID:", recipe);
+
+        //Create ingredients for recipe
         createIngredient(ingredientRows, recipe);
     })
-    //createIngredient(ingredientRows, therecipe);
-
-    console.log("BELOW IS THE ID");
-    console.log(directions);
-    console.log(ingredientRows[0].amount);
-    //createIngredient(ingredientRows, therecipe);
   };
 
   return (
@@ -84,6 +98,7 @@ const [basicRecipeInfo, setBasicRecipeInfo] = React.useState([]);
         handleDirectionInputChange = {handleDirectionInputChange}
         handleAddDirectionRow = {handleAddDirectionRow} 
         handleSubmit = {handleSubmit}
+        handleImageChange = {handleImageChange}
       />
     </div>
   );

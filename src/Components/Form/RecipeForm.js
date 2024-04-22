@@ -1,89 +1,7 @@
-// import React from "react";
-// import ImageForm from "./ImageForm";
-
-// //This is the user input component with an event binding on the submit button
-// const RecipeForm = ({ recipes, onSubmitClick }) => {
-//   return(
-//     <div>
-//       <hr />
-//       <h2>Add a Recipe</h2>
-//       <form action="#">
-//         <p>
-//           {/* Recipe title text input */}
-//           Recipe Name:
-//           <input type="text" name="recipeName" />
-//         </p>
-//         {/* Radio Buttons */}
-//         <p>Please select the recipe type:</p>
-//         <div>
-//           <p><input type="radio" name="type" value="mainDish" />Main Dish</p>
-//           <p><input type="radio" name="type" value="sideDish" />Side Dish</p>
-//           <p><input type="radio" name="type" value="appetizer" />Appetizer</p>
-//           <p><input type="radio" name="type" value="dessert" />Dessert</p>
-//         </div>
-//         <ImageForm/>
-//         {/* Submit button */}
-//         <input
-//           type="submit"
-//           name="submit"
-//           value="Submit"
-//           onClick={onSubmitClick}
-//         />
-//       </form>
-//     </div>
-//   );
-// };
-
-//import * as React from 'react';
-//import './style.css';
-
-//export default function App() {
-
-  // Handle Ingredient Rows
-
-  // const [ingredientRows, setIngredientRows] = React.useState([{ amount: '', unit: '', name: '', detail: '' }]);
-
-  // const handleIngredientInputChange = (e, index) => {
-  //   const values = [...ingredientRows];
-  //   if (e.target.name === 'name') {
-  //     values[index].name = e.target.value;
-  //   } else if (e.target.name === 'amount') {
-  //     values[index].amount = e.target.value;
-  //   } else if (e.target.name === 'unit') {
-  //     values[index].unit = e.target.value;
-  //   } else {
-  //     values[index].detail = e.target.value;
-  //   }
-  //   setIngredientRows(values);
-  // };
-
-  // const handleAddIngredientRow = () => {
-  //   setIngredientRows([...ingredientRows, { amount: '', unit: '', name: '', detail: '' }]);
-  // };
-
-  // // Handle direction rows 
-
-  // const [directionRows, setDirectionRows] = React.useState([{ direction: '' }]);
-
-  // const handleDirectionInputChange = (e, index) => {
-  //   const directions = [...directionRows];
-  //     directions[index].direction = e.target.value;
-  //   setDirectionRows(directions);
-  // };
-
-  // const handleAddDirectionRow = () => {
-  //   setDirectionRows([...directionRows, { direction: ''}]);
-  // };
-
-  // // Handle submit 
-
-  // const handleSubmit = () => {
-  //   console.log("submit success");
-  // };
-  //import ingredientRows from "./RecipeHandler";
   import * as React from 'react';
   
-  const RecipeForm = ({ basicRecipeInfo, onChangeHandler, ingredientRows, handleIngredientInputChange, handleAddIngredientRow, directionRows, handleDirectionInputChange, handleAddDirectionRow, handleSubmit }) => {
+//Recipe Form  
+  const RecipeForm = ({ basicRecipeInfo, onChangeHandler, ingredientRows, handleIngredientInputChange, handleAddIngredientRow, directionRows, handleDirectionInputChange, handleAddDirectionRow, handleSubmit, handleImageChange }) => {
 
   return (
     <div>
@@ -162,6 +80,7 @@
         ))}
         <button onClick={handleAddDirectionRow}>Add Row</button>
         <br/> <br/>
+        <input type="file" id="profilePhotoFileUpload" onChange={handleImageChange} />
         <button onClick={handleSubmit}>Submit</button>
       </div>
     </div>
