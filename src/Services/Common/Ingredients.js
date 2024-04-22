@@ -2,16 +2,31 @@ import Parse from "parse";
 /* SERVICE FOR PARSE SERVER OPERATIONS */
 
 // CREATE operation - new ingredient with Title
-export const createIngredient = (Name) => {
-  console.log("Creating: ", Name);
-  const Ingredient = Parse.Object.extend("Ingredient");
+export const createIngredient = (Ingredients, Recipe) => {
+
+  console.log("Creating: ", Ingredients);
+  console.log("THIS IS THE PASSED RECIPE", Recipe);
+
+  // Assuming you have a class for ingredients in your database
+const Ingredient = Parse.Object.extend('Ingredient');
+
+// Loop through each row and save it to the database
+Ingredients.forEach(row => {
   const ingredient = new Ingredient();
-  // using setter to UPDATE the object
-  ingredient.set("name", Name);
-  return ingredient.save().then((result) => {
-    // returns new Ingredients object
-    return result;
+  ingredient.set('amount', row.amount);
+  ingredient.set('unit', row.unit);
+  ingredient.set('name', row.name);
+  ingredient.set('detail', row.detail);
+  ingredient.set('recipe', Recipe);
+
+  // Save the ingredient object
+  ingredient.save().then((savedIngredient) => {
+    console.log('Ingredient saved', savedIngredient);
+  }).catch((error) => {
+    console.error('Error saving ingredient', error);
   });
+});
+
 };
 
 // READ operation - get ingredients by ID
