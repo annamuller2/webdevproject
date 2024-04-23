@@ -1,6 +1,6 @@
 import Main from "./Main/Main.js";
 import Form from "./Form/Form.js";
-import Footer from "./Footer/Footer.js";
+import UserRecipes from "./UserRecipes/UserRecipes.js";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import AuthModule from "./Auth/Auth.js";
 import AuthRegister from "./Auth/AuthRegister";
@@ -12,7 +12,6 @@ import Navbar from "./Footer/Navbar.js";
 export default function Components() {
   return (
     <Router>
-      {/* <Footer /> */}
       <Navbar />
       <Routes>
         <Route path="/auth" element={<AuthModule />} />
@@ -26,9 +25,11 @@ export default function Components() {
           path="/form"
           element={<ProtectedRoute path="/form" element={Form} />}
         />
+        <Route
+          path="/userRecipes"
+          element={<ProtectedRoute path="/userRecipes" element={UserRecipes} />}
+        />
         <Route path="*" element={<Navigate to="/auth" replace />} />
-        {/* <Route path="/" element={<Main />} />
-        <Route path="/form" element={<Form />} /> */}
       </Routes>
     </Router>
   );
