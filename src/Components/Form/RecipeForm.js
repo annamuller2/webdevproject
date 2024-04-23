@@ -3,19 +3,23 @@
 //Recipe Form  
   const RecipeForm = ({ basicRecipeInfo, onChangeHandler, ingredientRows, handleIngredientInputChange, handleAddIngredientRow, directionRows, handleDirectionInputChange, handleAddDirectionRow, handleSubmit, handleImageChange }) => {
 
+
   return (
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen </p>
+
       <div>
       <p>
           {/* Recipe title text input */}
           <label> Recipe Name: </label>
+
           <input type="text" name="recipeName" value = {basicRecipeInfo.title} onChange={(e) => onChangeHandler(e)}/>
         </p>
       <p>Select the recipe type:</p>
       <select name="type" id="type" value = {basicRecipeInfo.type} onChange={(e) => onChangeHandler(e)}
 >
+
         <option value="appetizer">Appetizer</option>
         <option value="mainDish">Main Dish</option>
         <option value="sideDish">Side Dish</option>
@@ -33,7 +37,9 @@
               name="amount"
               placeholder="2"
               value={row.amount}
+
               onChange={(e) => handleIngredientInputChange(e, index)}
+
             />
             <label>Unit: </label>
             <input
@@ -41,7 +47,9 @@
               name="unit"
               placeholder="cups"
               value={row.unit}
+
               onChange={(e) => handleIngredientInputChange(e, index)}
+
             />
             <label>Name: </label>
             <input
@@ -49,7 +57,9 @@
               name="name"
               placeholder="brown sugar"
               value={row.name}
+
               onChange={(e) => handleIngredientInputChange(e, index)}
+
             />
             <label>Description: </label>
             <input
@@ -57,11 +67,13 @@
               name="detail"
               placeholder="packed"
               value={row.detail}
+
               onChange={(e) => handleIngredientInputChange(e, index)}
             />
           </div>
         ))}
         <button onClick={handleAddIngredientRow}>Add Row</button>
+
         <br/> <br/>
 
 
@@ -74,6 +86,7 @@
               name="direction"
               placeholder="Combine ingredients in large mixing bowl."
               value={row.direction}
+
               onChange={(e) => handleDirectionInputChange(e, index)}
             />
           </div>
@@ -83,8 +96,11 @@
         <input type="file" id="profilePhotoFileUpload" onChange={handleImageChange} />
         <button onClick={handleSubmit}>Submit</button>
       </div>
+
     </div>
   );
 }
 
 export default RecipeForm;
+
+
