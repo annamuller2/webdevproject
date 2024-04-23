@@ -20,12 +20,12 @@
       <select name="type" id="type" value = {basicRecipeInfo.type} onChange={(e) => onChangeHandler(e)}
 >
 
-        <option value="appetizer">Appetizer</option>
-        <option value="mainDish">Main Dish</option>
-        <option value="sideDish">Side Dish</option>
-        <option value="snack">Snack</option>
-        <option value="dessert">Dessert</option>
-        <option value="other">Other</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Main Dish">Main Dish</option>
+        <option value="Side Dish">Side Dish</option>
+        <option value="Snack">Snack</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
       </select>
       <br/> <br/>
       <p>Ingredients:</p>
