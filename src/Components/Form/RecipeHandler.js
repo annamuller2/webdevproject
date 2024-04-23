@@ -1,23 +1,24 @@
 import * as React from 'react';
+import { useState } from "react";
 import RecipeForm from './RecipeForm';
 import { createDirectionsArray } from './RecipeService';
 import { createParseFile } from './RecipeService';
-import { createRecipe } from "../../Services/Common/Recipes.js";
+import { createUserRecipe } from "../../Services/Common/UserRecipe.js";
 import { createIngredient } from "../../Services/Common/Ingredients.js";
 
 const RecipeHandler = () => {
 
   //state for the ingredient rows
-const [ingredientRows, setIngredientRows] = React.useState([{ amount: '', unit: '', name: '', detail: '' }]);
+const [ingredientRows, setIngredientRows] = useState([{ amount: '', unit: '', name: '', detail: '' }]);
 
 //state for the recipe title and type
-const [basicRecipeInfo, setBasicRecipeInfo] = React.useState([]);
+const [basicRecipeInfo, setBasicRecipeInfo] = useState([]);
 
 //state for the image file
-const [imageFile, setImageFile] = React.useState(null); 
+const [imageFile, setImageFile] = useState(null); 
 
 //state for the direction rows
-const [directionRows, setDirectionRows] = React.useState([{ direction: '' }]);
+const [directionRows, setDirectionRows] = useState([{ direction: '' }]);
 
 //handler for ingredients
   const handleIngredientInputChange = (e, index) => {
@@ -76,7 +77,7 @@ const [directionRows, setDirectionRows] = React.useState([{ direction: '' }]);
     const image = createParseFile(imageFile);
 
     //create the recipe
-    createRecipe(basicRecipeInfo['recipeName'], basicRecipeInfo['type'], directions, image)
+    createUserRecipe(basicRecipeInfo['recipeName'], basicRecipeInfo['type'], directions, image)
     .then(recipe => {
         // Print the ID of the created recipe
         console.log("Recipe created with ID:", recipe);
