@@ -3,7 +3,7 @@ import { useState } from "react";
 import RecipeForm from './RecipeForm';
 import { createDirectionsArray } from './RecipeService';
 import { createParseFile } from './RecipeService';
-import { createRecipe } from "../../Services/Common/Recipes.js";
+import { createUserRecipe } from "../../Services/Common/UserRecipe.js";
 import { createIngredient } from "../../Services/Common/Ingredients.js";
 
 const RecipeHandler = () => {
@@ -77,7 +77,7 @@ const [directionRows, setDirectionRows] = useState([{ direction: '' }]);
     const image = createParseFile(imageFile);
 
     //create the recipe
-    createRecipe(basicRecipeInfo['recipeName'], basicRecipeInfo['type'], directions, image)
+    createUserRecipe(basicRecipeInfo['recipeName'], basicRecipeInfo['type'], directions, image)
     .then(recipe => {
         // Print the ID of the created recipe
         console.log("Recipe created with ID:", recipe);
