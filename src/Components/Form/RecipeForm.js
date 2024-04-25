@@ -5,17 +5,18 @@
 
 
   return (
-    <div>
-      <form>
-        <div>
+    <div class="max-w-xl mx-auto">
+        <div class="mb-5">
           <p>
             {/* Recipe title text input */}
-            <label > Recipe Name: </label>
-            <input type="text" name="recipeName" value = {basicRecipeInfo.title} onChange={(e) => onChangeHandler(e)}  />
+            <label class="block mb-2 text-md font-medium text-gray-900 dark:text-white"> Recipe Name: </label>
+            <input type="text" name="recipeName" value = {basicRecipeInfo.title} onChange={(e) => onChangeHandler(e)} class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
           </p>
 
-          <p >Select the recipe type:</p>
-          <select name="type" id="type" value = {basicRecipeInfo.type} onChange={(e) => onChangeHandler(e)} >
+          <br />
+
+          <p class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Select the recipe type:</p>
+          <select name="type" id="type" value = {basicRecipeInfo.type} onChange={(e) => onChangeHandler(e)} class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option value="Appetizer">Appetizer</option>
             <option value="Main Dish">Main Dish</option>
             <option value="Side Dish">Side Dish</option>
@@ -23,72 +24,74 @@
             <option value="Dessert">Dessert</option>
             <option value="Other">Other</option>
           </select>
-          <br/> <br/>
-          <p >Ingredients:</p>
+
+          <br/>
+
+          <p class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Ingredients:</p>
             {ingredientRows.map((row, index) => (
-              <div key={index}>
-                <label >Amount: </label>
+              <div key={index} class="grid md:grid-cols-8 md:gap-2" >
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount: </label>
                 <input
                   type="text"
                   name="amount"
                   placeholder="2"
                   value={row.amount}
                   onChange={(e) => handleIngredientInputChange(e, index)}
-                  
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-                <label >Unit: </label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Unit: </label>
                 <input
                   type="text"
                   name="unit"
                   placeholder="cups"
                   value={row.unit}
                   onChange={(e) => handleIngredientInputChange(e, index)}
-                  
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-                <label >Name: </label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name: </label>
                 <input
                   type="text"
                   name="name"
                   placeholder="brown sugar"
                   value={row.name}
                   onChange={(e) => handleIngredientInputChange(e, index)}
-                  
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-                <label >Description: </label>
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description: </label>
                 <input
                   type="text"
                   name="detail"
                   placeholder="packed"
                   value={row.detail}
                   onChange={(e) => handleIngredientInputChange(e, index)}
-                  
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
             ))}
-            <button onClick={handleAddIngredientRow}>Add Row</button>
+            <button onClick={handleAddIngredientRow} class="px-2 py-1 mb-2 text-xs font-medium text-center text-blue-700 rounded-lg hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">+</button>
 
-            <br/> <br/>
+            <br /> <br />
 
-          <p >Directions:</p>
+          <p class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Directions:</p>
             {directionRows.map((row, index) => (
-              <div key={index}>
-                <label >Direction: </label>
+              <div key={index} class="grid md:grid-cols-2 md:gap-2">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" >Direction: </label>
                 <input
                   type="text"
                   name="direction"
                   placeholder="Combine ingredients in large mixing bowl."
                   value={row.direction}
                   onChange={(e) => handleDirectionInputChange(e, index)}
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
             ))}
-            <button onClick={handleAddDirectionRow}>Add Row</button>
+            <button onClick={handleAddDirectionRow} class="px-2 py-1 text-xs font-medium text-center text-blue-700 rounded-lg hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">+</button>
             <br/> <br/>
             <input type="file" id="profilePhotoFileUpload" onChange={handleImageChange} />
-            <br/> 
-            <button onClick={handleSubmit} >Submit</button>
+            <br/> <br/>
+            <button onClick={handleSubmit} onSubmit={(e) => e.preventDefault()} class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
           </div>
-      </form>
     </div>
   );
 }

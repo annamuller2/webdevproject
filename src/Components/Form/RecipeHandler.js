@@ -4,7 +4,7 @@ import RecipeForm from './RecipeForm';
 import { createDirectionsArray } from './RecipeService';
 import { createParseFile } from './RecipeService';
 import { createUserRecipe } from "../../Services/Common/UserRecipe.js";
-import { createIngredient } from "../../Services/Common/Ingredients.js";
+import { createUserIngredient } from "../../Services/Common/UserIngredients.js";
 
 const RecipeHandler = () => {
 
@@ -83,8 +83,12 @@ const [directionRows, setDirectionRows] = useState([{ direction: '' }]);
         console.log("Recipe created with ID:", recipe);
 
         //Create ingredients for recipe
-        createIngredient(ingredientRows, recipe);
+        createUserIngredient(ingredientRows, recipe);
     })
+    alert(
+      `Recipe successfully submitted!`
+    );
+    
   };
 
   return (

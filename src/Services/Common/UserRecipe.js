@@ -9,7 +9,7 @@ export const createUserRecipe = (Title, Type, Directions, File) => {
 
   // get the current user id and set it as user 
   const currUser = Parse.User.current();
-  userRecipe.set("user", currUser.id);
+  userRecipe.set("user", currUser);
 
   // using setter to UPDATE the object
   userRecipe.set("title", Title);
