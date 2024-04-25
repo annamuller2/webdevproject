@@ -19,31 +19,21 @@ const AuthModule = () => {
   return (
     <div>
       
-<h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">My Digital Cookbook</span></h1>
-<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at My Digital Cookbook we encourage users to browse our extensive collection of digitized home recipes, and to document their own recipes! Register for an account below if you are a new user, or login if you are a returning one. Happy cooking!</p>
+      <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">My Digital Cookbook</span></h1>
+      <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at My Digital Cookbook we encourage users to browse our extensive collection of digitized home recipes, and to document their own recipes! Register for an account below if you are a new user, or login if you are a returning one. Happy cooking!</p>
 
       <div class="flex justify-center">
-  <div class="max-w-xs flex flex-col rounded-lg shadow-sm">
-    <a href="/auth/register" class="py-3 px-4 inline-flex items-center gap-x-2 rounded-md text-base font-medium focus:z-10 border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">
-      Register
-    </a>
-    <br />
-    <br />
-    <a href="/auth/login" class="-mt-px py-3 px-4 inline-flex items-center gap-x-2 text-base font-medium focus:z-10 border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">
-      Login
-    </a>
-  </div>
-  </div>
-      {/* <div class="max-w-xs flex flex-col rounded-lg shadow-sm">
-      <Link to="/auth/register">
-        <button class="py-3 px-4 inline-flex items-center gap-x-2 rounded-t-md text-sm font-medium focus:z-10 border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">Register</button>
-      </Link>
-      <br />
-      <br />
-      <Link to="/auth/login">
-        <button class="-mt-px py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium focus:z-10 border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">Login</button>
-      </Link>
-      </div> */}
+        <div class="max-w-xs flex flex-col rounded-lg shadow-sm">
+          <a href="/auth/register" class="py-3 px-4 inline-flex items-center gap-x-2 rounded-md text-base font-medium focus:z-10 border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">
+            Register
+          </a>
+          <br />
+          <br />
+          <a href="/auth/login" class="-mt-px py-3 px-4 inline-flex items-center gap-x-2 text-base font-medium focus:z-10 border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800">
+            Login
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
