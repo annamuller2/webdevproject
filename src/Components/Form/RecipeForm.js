@@ -29,8 +29,8 @@
 
           <p class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Ingredients:</p>
             {ingredientRows.map((row, index) => (
-              <div key={index} class="grid md:grid-cols-8 md:gap-2" >
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount: </label>
+              <div key={index} class="grid md:grid-cols-4 md:gap-2" >
+                {/* <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount: </label> */}
                 <input
                   type="text"
                   name="amount"
@@ -39,7 +39,7 @@
                   onChange={(e) => handleIngredientInputChange(e, index)}
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Unit: </label>
+                {/* <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Unit: </label> */}
                 <input
                   type="text"
                   name="unit"
@@ -48,7 +48,7 @@
                   onChange={(e) => handleIngredientInputChange(e, index)}
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name: </label>
+                {/* <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name: </label> */}
                 <input
                   type="text"
                   name="name"
@@ -57,7 +57,7 @@
                   onChange={(e) => handleIngredientInputChange(e, index)}
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description: </label>
+                {/* <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description: </label> */}
                 <input
                   type="text"
                   name="detail"
@@ -68,14 +68,14 @@
                 />
               </div>
             ))}
-            <button onClick={handleAddIngredientRow} class="px-2 py-1 mb-2 text-xs font-medium text-center text-blue-700 rounded-lg hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">+</button>
+            <button onClick={handleAddIngredientRow} class="px-1.5 py-0.5 mb-2 text-xs font-medium text-center text-blue-700 rounded-lg hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">+</button>
 
             <br /> <br />
 
           <p class="block mb-2 text-md font-medium text-gray-900 dark:text-white">Directions:</p>
             {directionRows.map((row, index) => (
-              <div key={index} class="grid md:grid-cols-2 md:gap-2">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" >Direction: </label>
+              <div key={index}>
+                {/* <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" >Direction: </label> */}
                 <input
                   type="text"
                   name="direction"
@@ -86,9 +86,10 @@
                 />
               </div>
             ))}
-            <button onClick={handleAddDirectionRow} class="px-2 py-1 text-xs font-medium text-center text-blue-700 rounded-lg hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">+</button>
+            <button onClick={handleAddDirectionRow} class="px-1.5 py-0.5 text-xs font-medium text-center text-blue-700 rounded-lg hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">+</button>
             <br/> <br/>
-            <input type="file" id="profilePhotoFileUpload" onChange={handleImageChange} />
+            <label class="block mb-2 text-md font-medium text-gray-900 dark:text-white" for="file_input">Upload file:</label>
+            <input type="file" id="profilePhotoFileUpload" onChange={handleImageChange} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"/>
             <br/> <br/>
             <button onClick={handleSubmit} onSubmit={(e) => e.preventDefault()} class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
           </div>
