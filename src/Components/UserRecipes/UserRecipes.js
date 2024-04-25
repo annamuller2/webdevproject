@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getAllRecipes, Recipes } from "../../Services/Common/Recipes.js";
-import { getAllIngredients, Ingredients } from "../../Services/Common/Ingredients.js";
+import { getAllRecipesByUser } from "../../Services/Common/UserRecipe.js";
+import { Recipes } from "../../Services/Common/Recipes.js";
 import RecipeList from "../Main/RecipeList.js";
-import AuthLogout from "../Auth/AuthLogout.js"
 import Parse from "parse";
-//import RecipeForm from "./RecipeForm.js";
+
   
   const UserRecipes = () => {
 
@@ -18,16 +17,12 @@ import Parse from "parse";
       if (Recipes.collection.length) {
         setRecipes(Recipes.collection);
       } else {
-        getAllRecipes().then((recipes) => {
+        getAllRecipesByUser().then((recipes) => {
           console.log(recipes);
           setRecipes(recipes);
         });
       }
     }, []);
-
-    function clickAlert() {
-      alert("Submission received!");
-    }
 
     const currUser = Parse.User.current();
     const userName = currUser.get("firstName")

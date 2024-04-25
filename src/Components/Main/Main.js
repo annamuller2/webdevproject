@@ -1,10 +1,8 @@
 
 import React, { useEffect, useState } from "react";
 import { getAllRecipes, Recipes } from "../../Services/Common/Recipes.js";
-import { getAllIngredients, Ingredients } from "../../Services/Common/Ingredients.js";
 import RecipeList from "./RecipeList.js";
-import AuthLogout from "../Auth/AuthLogout.js"
-//import RecipeForm from "./RecipeForm.js";
+
   
   const Main = () => {
     const [recipes, setRecipes] = useState([]);
@@ -20,10 +18,6 @@ import AuthLogout from "../Auth/AuthLogout.js"
         });
       }
     }, []);
-
-    function clickAlert() {
-      alert("Submission received!");
-    }
   
     //This is the html for the page, which contains a header, and the list of recipes in the JSON, and logout button
     return (

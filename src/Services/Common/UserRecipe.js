@@ -37,3 +37,21 @@ export const getAllUserRecipes = () => {
       return results;
     });
   };
+
+
+  // get all recipes associated with the logged in user
+export const getAllRecipesByUser = () => {
+    const UserRecipe = Parse.Object.extend("UserRecipe");
+    const query = new Parse.Query(UserRecipe);
+
+    // get the logged in user
+    const currUser = Parse.User.current();
+
+    query.equalTo("user", currUser);
+
+    return query.find().then((results) => {
+      console.log("results: ", results);
+      // returns array of Recipe objects
+      return results;
+    });
+  };
