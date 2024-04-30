@@ -3,7 +3,7 @@ import { useState } from "react";
 import RecipeForm from './RecipeForm';
 import { createDirectionsArray } from './RecipeService';
 import { createParseFile } from './RecipeService';
-import { createUserRecipe } from "../../Services/Common/UserRecipe.js";
+import { createUserRecipe } from "../../Services/Common/UserRecipes.js";
 import { createUserIngredient } from "../../Services/Common/UserIngredients.js";
 
 const RecipeHandler = () => {
