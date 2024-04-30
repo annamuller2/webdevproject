@@ -4,30 +4,32 @@ import RecipeIngredients from "./RecipeIngredients.js";
 
 //This is where the recipe id is passed into the function getAllIngredientsByRecipe
 //Then the ingredients that are returned are passed into RecipeIngredients
+
 const Intermediate = ( recipeId ) => {
   
     const [ingredients, setIngredients] = useState([]);
   
     useEffect(() => {
-      if (Ingredients.collection.length) {
-        setIngredients(Ingredients.collection);
-      } else {
-        getAllIngredientsByRecipe(recipeId).then((ingredients) => {
-        console.log('recipe id:', recipeId);
-        console.log('ingredients',ingredients);
+        if (Ingredients.collection.length) {
+          setIngredients(Ingredients.collection);
+        } else {
+          getAllIngredientsByRecipe(recipeId).then((ingredients) => {
+          console.log('recipe id:', recipeId);
+          console.log('ingredients',ingredients);
           console.log(ingredients);
           setIngredients(ingredients);
-        });
-      }
-    }, [recipeId]);
+          });
+        }
+      }, [recipeId]);
+
     
-    //This is the html for the page, which contains a header, and the list of recipes in the JSON, and a form for user input
+    //This passes the ingredients to the RecipeIngredients file to be printed 
     return (
-        <div>
-          <RecipeIngredients ingredients={ingredients} />
-        </div>
-      );
-    };
+      <div>
+        <RecipeIngredients ingredients={ingredients} />
+      </div>
+    );
+  };
 
   export default Intermediate;
   

@@ -28,3 +28,24 @@ export const createUserIngredient = (Ingredients, Recipe) => {
     });
 
 };
+
+export let UserIngredients = {};
+UserIngredients.collection = [];
+
+//This is how the ingredients for each recipe are found
+export const getAllUserIngredientsByRecipe = (recipeId) => {
+    const UserIngredient = Parse.Object.extend("UserIngredient");
+    const query = new Parse.Query(UserIngredient);
+
+    //The input to the query needs to be collected as an object and converted to a string
+    const recipePointer = new Parse.Object("UserRecipe");
+    recipePointer.id = recipeId['recipeId'].toString();
+
+    query.equalTo("recipe", recipePointer);
+
+    return query.find().then((results) => {
+      console.log("results: ", results);
+      // returns array of Ingredient objects
+      return results;
+    });
+  };

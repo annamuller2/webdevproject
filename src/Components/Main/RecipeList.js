@@ -1,10 +1,11 @@
 // import RecipeImage from "./RecipeImage.js"
 import RecipeDirections from "./RecipeDirections.js"
 import RecipeIntermediate from "./RecipeIntermediate.js"
+import UserIntermediate from "../UserRecipes/UserIntermediate.js"
 import RecipeImage from "./RecipeImage.js"
 
 //Recipe list component, which is a prent component to RecipeImage, RecipeIngrediennts, and RecipeDirections
-const RecipeList = ({ recipes }) => {
+const RecipeList = ({ recipes, userFlag }) => {
     return (
       <div>
         <hr />
@@ -17,9 +18,12 @@ const RecipeList = ({ recipes }) => {
 
               {recipe.get("title")}
               {/* call the child components */}
-              {/* we will uncomment the RecipeImage component in feature5 */}
               <RecipeImage imageUrl={recipe.get("image").url()} />
-              <RecipeIntermediate recipeId={recipe.id}  />
+              {userFlag ? (
+                <UserIntermediate recipeId={recipe.id} />
+              ) : (
+                <RecipeIntermediate recipeId={recipe.id} />
+              )}
               <RecipeDirections recipe={recipe.get("directions")} /> 
 
             </li>
