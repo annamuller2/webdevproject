@@ -4,7 +4,7 @@ const RecipeImage = ({ imageUrl }) => {
 
     return (
         <div>
-            <img src={imageUrl} alt="Recipe" />
+            <img src={imageUrl} alt="Recipe" class="max-h-80 mx-auto my-4 rounded-lg shadow" />
         </div>
     );
 };

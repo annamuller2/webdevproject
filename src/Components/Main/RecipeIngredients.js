@@ -4,7 +4,7 @@ import React from "react";
 const RecipeIngredients = ({ ingredients }) => {
   return (
     <div>
-      Ingredients:
+      <h2 class="text-xl font-semibold mb-2 mt-2">Ingredients:</h2>
       <ul>
         {ingredients.map((ingredient) => (
           <li key={ingredient.id}>
