@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllRecipesByUser } from "../../Services/Common/UserRecipe.js";
+import { getAllRecipesByUser } from "../../Services/Common/UserRecipes.js";
 import { Recipes } from "../../Services/Common/Recipes.js";
 import RecipeList from "../Main/RecipeList.js";
 import Parse from "parse";

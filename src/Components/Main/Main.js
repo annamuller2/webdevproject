@@ -17,7 +17,7 @@ import RecipeList from "./RecipeList.js";
           setRecipes(recipes);
         });
       }
-    }, []);
+    }, []); 
   
     //This is the html for the page, which contains a header, and the list of recipes in the JSON, and logout button
     return (
