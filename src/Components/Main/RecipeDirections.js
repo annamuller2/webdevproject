@@ -4,8 +4,8 @@ import React from "react";
 const RecipeDirections = ({ recipe }) => {
   return (
     <div>
-      Directions:
-      <ol>
+      <h2 class="text-xl font-semibold mb-2 mt-2">Directions:</h2>
+      <ol class="list-decimal ml-4">
         {recipe && recipe.map(
           (direction) => (<li key={direction}>{direction}</li>
         ))}

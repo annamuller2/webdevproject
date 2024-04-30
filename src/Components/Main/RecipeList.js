@@ -15,8 +15,8 @@ const RecipeList = ({ recipes, userFlag }) => {
             <li key={recipe}>
 
               {/* print the title, image, ingredients, and directions for each recipe */}
-
-              {recipe.get("title")}
+              <div class="mx-auto w-full max-w-xl p-6 bg-white border border-gray-200 rounded-lg shadow mb-4 mt-4 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+              <h1 class="text-2xl font-bold mb-4 mt-4"> {recipe.get("title")} </ h1>
               {/* call the child components */}
               <RecipeImage imageUrl={recipe.get("image").url()} />
               {userFlag ? (
@@ -25,7 +25,7 @@ const RecipeList = ({ recipes, userFlag }) => {
                 <RecipeIntermediate recipeId={recipe.id} />
               )}
               <RecipeDirections recipe={recipe.get("directions")} /> 
-
+              </div>
             </li>
           ))}
         </ul>
