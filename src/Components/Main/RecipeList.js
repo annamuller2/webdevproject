@@ -18,9 +18,12 @@ const RecipeList = ({ recipes, userFlag }) => {
 
               {recipe.get("title")}
               {/* call the child components */}
-              {/* we will uncomment the RecipeImage component in feature5 */}
               <RecipeImage imageUrl={recipe.get("image").url()} />
-              <RecipeIntermediate recipeId={recipe.id} userFlag={userFlag} />
+              {userFlag ? (
+                <UserIntermediate recipeId={recipe.id} />
+              ) : (
+                <RecipeIntermediate recipeId={recipe.id} />
+              )}
               <RecipeDirections recipe={recipe.get("directions")} /> 
 
             </li>

@@ -8,7 +8,8 @@ const RecipeIngredients = ({ ingredients }) => {
       <ul>
         {ingredients.map((ingredient) => (
           <li key={ingredient.id}>
-            {ingredient.get("amount")} {ingredient.get("unit")} {ingredient.get("name")}, {ingredient.get("detail")}
+            {ingredient.get("amount")} {ingredient.get("unit")} {ingredient.get("name")}
+            {ingredient.get("detail") && `, ${ingredient.get("detail")}`}
           </li>
         ))}
       </ul>
