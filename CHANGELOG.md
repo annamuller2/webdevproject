@@ -1,6 +1,19 @@
 Change Log 
 
 All notable changes to this project will be kept in this file. 
+[0.4.0] - 2024-05-02
+
+Added
+- Added a user recipe and user ingredients class to the database
+- Added a page to display the logged in user's recipes 
+- Added recipe photos 
+- Added styling to all pages 
+
+Changed
+- Changed the form so now users can add their own recipes
+
+Fixed
+
 
 [0.3.0] - 2024-03-28
 
